@@ -1,24 +1,19 @@
 ﻿using Iyzipay;
 using Iyzipay.Model;
 using Iyzipay.Request;
-
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
-
 using MiniShopApp.Business.Abstract;
 using MiniShopApp.Core;
 using MiniShopApp.Entity;
 using MiniShopApp.WebUI.Identity;
 using MiniShopApp.WebUI.Models;
-
 using Newtonsoft.Json;
-
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-
 using OrderItem = MiniShopApp.Entity.OrderItem;
 
 namespace MiniShopApp.WebUI.Controllers
@@ -29,7 +24,6 @@ namespace MiniShopApp.WebUI.Controllers
         private ICardService _cardService;
         private UserManager<User> _userManager;
         private IOrderService _orderService;
-        
 
         public CardController(ICardService cardService, UserManager<User> userManager, IOrderService orderService)
         {
@@ -37,14 +31,14 @@ namespace MiniShopApp.WebUI.Controllers
             _userManager = userManager;
             _orderService = orderService;
         }
-
-        public IActionResult Index() 
+        public IActionResult Index()
         {
-            var userId = _userManager.GetUserId(User);      //login olan user ın idsini alır.
+            var userId = _userManager.GetUserId(User);
             var card = _cardService.GetCardByUserId(userId);
-            return View(new CardModel() {
+            var model = new CardModel()
+            {
                 CardId = card.Id,
-                CardItems = card.CardItems.Select(i => new CardItemModel()  //cardItem olarak at ama CardItemModel Tipinde at.
+                CardItems = card.CardItems.Select(i => new CardItemModel()
                 {
                     CardItemId = i.Id,
                     ProductId = i.ProductId,
@@ -53,17 +47,18 @@ namespace MiniShopApp.WebUI.Controllers
                     ImageUrl = i.Product.ImageUrl,
                     Quantity = i.Quantity
                 }).ToList()
-            });
+            };
+            return View(model);
         }
         public IActionResult GetOrders()
         {
             var userId = _userManager.GetUserId(User);
             var orders = _orderService.GetOrders(userId);
-            var orderListModal = new List<OrderListModal>();
-            OrderListModal orderModel;
+            var orderListModel = new List<OrderListModel>();
+            OrderListModel orderModel;
             foreach (var order in orders)
             {
-                orderModel = new OrderListModal();
+                orderModel = new OrderListModel();
                 orderModel.OrderId = order.Id;
                 orderModel.OrderNumber = order.OrderNumber;
                 orderModel.OrderDate = order.OrderDate;
@@ -75,18 +70,19 @@ namespace MiniShopApp.WebUI.Controllers
                 orderModel.Email = order.Email;
                 orderModel.OrderState = order.OrderState;
                 orderModel.PaymentType = order.PaymentType;
-                orderModel.OrderItems = order.OrderItems.Select(i => new OrderItemModal()
+                orderModel.OrderItems = order.OrderItems.Select(i => new OrderItemModel()
                 {
-                    OrderItemId = i.Id,
-                    Name = i.Product.Name,
-                    Price = (double)i.Price,
-                    Quantity = i.Quantity,
-                    ImageUrl = i.Product.ImageUrl
+                    OrderItemId=i.Id,
+                    Name=i.Product.Name,
+                    Price=(double)i.Price,
+                    Quantity=i.Quantity,
+                    ImageUrl=i.Product.ImageUrl
                 }).ToList();
-                orderListModal.Add(orderModel);
+                orderListModel.Add(orderModel);
             }
-            return View("Orders",orderListModal);       //benim view adım Orders olacak dedik ve order listmodel ile git dedik
+            return View("Orders",orderListModel);
         }
+        
         [HttpPost]
         public IActionResult AddToCard(int productId, int quantity)
         {
@@ -94,6 +90,7 @@ namespace MiniShopApp.WebUI.Controllers
             _cardService.AddToCard(userId, productId, quantity);
             return RedirectToAction("Index");
         }
+        
         [HttpPost]
         public IActionResult DeleteFromCard(int productId)
         {
@@ -101,36 +98,36 @@ namespace MiniShopApp.WebUI.Controllers
             _cardService.DeleteFromCard(userId, productId);
             return RedirectToAction("Index");
         }
-        public IActionResult Checkout()
+        public IActionResult CheckOut()
         {
             var userId = _userManager.GetUserId(User);
             var card = _cardService.GetCardByUserId(userId);
-            var orderModal = new OrderModal();
-            orderModal.CardModel = new CardModel()
+            var orderModel = new OrderModel();
+            orderModel.CardModel = new CardModel()
             {
                 CardId = card.Id,
                 CardItems = card.CardItems.Select(i => new CardItemModel()
                 {
-                    CardItemId = i.CardId,
-                    ProductId = i.ProductId,
-                    Name = i.Product.Name,
-                    Price = (double)i.Product.Price,
-                    ImageUrl = i.Product.ImageUrl,
-                    Quantity = i.Quantity
+                    CardItemId= i.Id,
+                    ProductId=i.ProductId,
+                    Name=i.Product.Name,
+                    Price=(double)i.Product.Price,
+                    ImageUrl=i.Product.ImageUrl,
+                    Quantity=i.Quantity
                 }).ToList()
             };
-            return View(orderModal);
+
+            return View(orderModel);
         }
+
         [HttpPost]
-        public IActionResult CheckOut(OrderModal orderModal)
+        public IActionResult CheckOut(OrderModel orderModel)
         {
-            
             if (ModelState.IsValid)
             {
                 var userId = _userManager.GetUserId(User);
                 var card = _cardService.GetCardByUserId(userId);
-                var cardId = card.Id;
-                orderModal.CardModel = new CardModel()
+                orderModel.CardModel = new CardModel()
                 {
                     CardId = card.Id,
                     CardItems = card.CardItems.Select(i => new CardItemModel()
@@ -143,75 +140,119 @@ namespace MiniShopApp.WebUI.Controllers
                         Quantity = i.Quantity
                     }).ToList()
                 };
-                //Ödeme Alma işlemine başlayacağız
-                //if (!CardNumberControl(orderModal.CardNumber))
-                //{
-                //    TempData["Message"] = JobManager.CreateMessage("HATAL", "Kart Numarası Hatalıdır", "danger");
-                //    return View(orderModal);
-                //}
-                var payment = PaymentProcess(orderModal);
-                if (payment.Status =="success")     //başarılıysa
+                //Ödeme alma işlemi
+                if (!CardNumberControl(orderModel.CardNumber))
                 {
-                    SaveOrder(orderModal, payment, userId);
-                    _cardService.ClearCard(cardId);      
-                    TempData["Message"] = JobManager.CreateMessage("", "Ödemeniz Başarıyla alınmıştır.", "success");
+                    TempData["Message"] = JobManager.CreateMessage("HATA!", "Kart numarası hatalıdır!", "danger");
+                    return View(orderModel);
+                }
+                var payment = PaymentProcess(orderModel);
+                if (payment.Status=="success")
+                {
+                    SaveOrder(orderModel,payment,userId);
+                    _cardService.ClearCard(orderModel.CardModel.CardId);
+                    TempData["Message"] = JobManager.CreateMessage("BAŞARILI!", "Ödemeniz başarıyla alınmıştır!", "success");
                     return View("Success");
                 }
                 else
                 {
-                    TempData["Message"] = JobManager.CreateMessage("",payment.ErrorMessage, "danger");
+                    TempData["Message"] = JobManager.CreateMessage("BAŞARISIZ!",payment.ErrorMessage,"danger");
                 }
+                
             }
-            return View(orderModal);
-
+            return View(orderModel);
         }
 
-        private void SaveOrder(OrderModal orderModal, Payment payment, string userId)
+        private bool CardNumberControl(string cardNumber)
+        {
+            var cardNumberLength = cardNumber.Length;
+            int total = 0;
+            if (cardNumberLength!=16)
+            {
+                return false;
+            }
+            else
+            {
+                int ovenTotal = 0;
+                int oddTotal = 0;
+                for (int i = 0; i < cardNumberLength; i++)
+                {
+                        int nextNumber = Convert.ToInt32(cardNumber[i].ToString());
+                    if (i%2==0)
+                    {
+                        oddTotal += NumberControl((nextNumber * 2).ToString());
+                    }
+                    else
+                    {
+                        ovenTotal += nextNumber;
+                    }
+                }
+                total = ovenTotal + oddTotal;
+            }
+            if (total%10==0)
+            {
+                return true;
+            }
+            return false;
+        }
+
+        private int NumberControl(string number)
+        {
+            int numberLength = number.Length;
+            if (numberLength==1)
+            {
+                return Convert.ToInt32(number);
+            }
+            int total = 0;
+            for (int i = 0; i < numberLength; i++)
+            {
+                total += Convert.ToInt32(number[i].ToString());
+            }
+            return total;
+        }
+        private void SaveOrder(OrderModel orderModel, Payment payment, string userId)
         {
             var order = new Order();
-
             order.OrderNumber = new Random().Next(111111111, 999999999).ToString();
             order.OrderState = EnumOrderState.Completed;
             order.PaymentType = EnumPaymentType.CreditCard;
             order.PaymentId = payment.PaymentId;
             order.ConversationId = payment.ConversationId;
             order.OrderDate = new DateTime();
-            order.FirstName = orderModal.FirstName;
-            order.LastName = orderModal.LastName;
-            order.City = orderModal.City;
-            order.Email = orderModal.Email;
-            order.Phone = orderModal.Phone;
-            order.Address = orderModal.Address;
+            order.FirstName = orderModel.FirstName;
+            order.LastName = orderModel.LastName;
             order.UserId = userId;
+            order.Address = orderModel.Address;
+            order.City = orderModel.City;
+            order.Phone = orderModel.Phone;
+            order.Email = orderModel.Email;
             order.OrderItems = new List<OrderItem>();
-            foreach (var item in orderModal.CardModel.CardItems)
+            foreach (var item in orderModel.CardModel.CardItems)
             {
                 var orderItem = new OrderItem()
                 {
-                    Price = item.Price,
-                    Quantity = item.Quantity,
-                    ProductId = item.ProductId
+                    Price=item.Price,
+                    Quantity=item.Quantity,
+                    ProductId=item.ProductId
                 };
                 order.OrderItems.Add(orderItem);
             }
-            //artık bu bilgileri kullanarak order kaydı yaratılabilir.
+            //Artık bu bilgileri kullanarak order kaydı yaratabiliriz!
             _orderService.Create(order);
-               
-            
         }
 
-        private Payment PaymentProcess(OrderModal orderModal)
+        private Payment PaymentProcess(OrderModel orderModel)
         {
             Options options = new Options();
-            options.ApiKey = "sandbox-THtnHmRsMONKUa4ymXerdMMIv12x7qYY";
-            options.SecretKey = "sandbox-4h4icfoPPpVQoIsxlrTeUIAKPBKr0uID";
+            options.ApiKey = "sandbox-9D01souNiet8ejdsclkhltHUrSaItC74";
+            options.SecretKey = "sandbox-8q72kkhu9mmEtYr1od2cZcomxvZWttH8";
             options.BaseUrl = "https://sandbox-api.iyzipay.com";
 
-            CreatePaymentRequest request = new CreatePaymentRequest();      //ödeme isteği başlatıyor
+            CreatePaymentRequest request = new CreatePaymentRequest();
             request.Locale = Locale.TR.ToString();
-            request.ConversationId = new Random().Next(111111111,999999999).ToString(); //id
-            request.Price = orderModal.CardModel.TotalPrice().ToString();        //total price
-            request.PaidPrice = orderModal.CardModel.TotalPrice().ToString();    //esas alınacak ödeme indirim vs.
+            request.ConversationId = new Random().Next(111111111,999999999).ToString();
+            request.Price = orderModel.CardModel.TotalPrice().ToString();
+            request.PaidPrice = orderModel.CardModel.TotalPrice().ToString();
             request.Currency = Currency.TRY.ToString();
             request.Installment = 1;
             request.BasketId = "B67832";
@@ -219,14 +260,13 @@ namespace MiniShopApp.WebUI.Controllers
             request.PaymentGroup = PaymentGroup.PRODUCT.ToString();
 
             PaymentCard paymentCard = new PaymentCard();
-            paymentCard.CardHolderName = orderModal.CardName;
-            paymentCard.CardNumber = orderModal.CardNumber;
-            paymentCard.ExpireMonth = orderModal.ExpirationMonth;
-            paymentCard.ExpireYear = orderModal.ExpirationYear;
-            paymentCard.Cvc = orderModal.Cvc;
+            paymentCard.CardHolderName = orderModel.CardName;
+            paymentCard.CardNumber = orderModel.CardNumber;
+            paymentCard.ExpireMonth = orderModel.ExpirationMonth;
+            paymentCard.ExpireYear = orderModel.ExpirationYear;
+            paymentCard.Cvc = orderModel.Cvc;
             paymentCard.RegisterCard = 0;
             request.PaymentCard = paymentCard;
-
 
             //paymentCard.CardNumber = "5528790000000008";
             //paymentCard.ExpireMonth = "12";
@@ -235,16 +275,16 @@ namespace MiniShopApp.WebUI.Controllers
 
             Buyer buyer = new Buyer();
             buyer.Id = "BY789";
-            buyer.Name = orderModal.FirstName;
-            buyer.Surname = orderModal.LastName;
-            buyer.GsmNumber = orderModal.Phone;
-            buyer.Email = orderModal.Email;
+            buyer.Name = orderModel.FirstName;
+            buyer.Surname = orderModel.LastName;
+            buyer.GsmNumber = orderModel.Phone;
+            buyer.Email = orderModel.Email;
             buyer.IdentityNumber = "74300864791";
             buyer.LastLoginDate = "2015-10-05 12:43:35";
             buyer.RegistrationDate = "2013-04-21 15:12:09";
-            buyer.RegistrationAddress = orderModal.Address;
+            buyer.RegistrationAddress = orderModel.Address;
             buyer.Ip = "85.34.78.112";
-            buyer.City = orderModal.City;
+            buyer.City = orderModel.City;
             buyer.Country = "Turkey";
             buyer.ZipCode = "34732";
             request.Buyer = buyer;
@@ -266,95 +306,19 @@ namespace MiniShopApp.WebUI.Controllers
             request.BillingAddress = billingAddress;
 
             List<BasketItem> basketItems = new List<BasketItem>();
-
             BasketItem basketItem;
-            foreach (var item in orderModal.CardModel.CardItems)
+            foreach (var item in orderModel.CardModel.CardItems)
             {
                 basketItem = new BasketItem();
                 basketItem.Id = item.ProductId.ToString();
                 basketItem.Name = item.Name;
                 basketItem.Category1 = "General";
                 basketItem.ItemType = BasketItemType.PHYSICAL.ToString();
-                basketItem.Price = (item.Quantity * item.Price).ToString();
+                basketItem.Price = (item.Quantity*item.Price).ToString();
                 basketItems.Add(basketItem);
             }
             request.BasketItems = basketItems;
-
-           return Payment.Create(request, options);
+            return Payment.Create(request, options);
         }
-
-        //private bool CheckCard(string cardNo)     BENİM LOHN ALGORİTMAM
-        //{
-        //    int total = 0;
-
-        //    for (int i = 1; i < cardNo.Length; i++)
-        //    {
-
-        //        if (cardNo[i] % 2 != 0)
-        //        {
-        //            if (cardNo[i] * 2 >= 10)
-        //            {
-        //                int mod = (cardNo[i] * 2) % 10;
-        //                total += mod + 1;
-        //            }
-        //            else
-        //            {
-        //                total += cardNo[i] * 2;
-        //            }
-        //        }
-        //    }
-        //    if (total % 10 == 0)
-        //    {
-        //        return true;
-        //    }
-        //    return false;
-        //}
-        private bool CardNumberControl(string cardNumber)
-        {
-            var cardNumberLenght = cardNumber.Length;
-            int total = 0;
-            if (cardNumberLenght != 16)
-            {
-                return false;
-            }
-            else
-            {
-                int ovenTotal = 0;
-                int oddTotal = 0;
-                for (int i = 0; i < cardNumberLenght; i++)
-                {
-                    int nextNumber = Convert.ToInt32(cardNumber[i].ToString());
-                    if (i % 2 == 0)
-                    {
-                        oddTotal += NumberControl((nextNumber * 2).ToString());
-                    }
-                    else
-                    {
-                        ovenTotal += nextNumber;
-                    }
-                }
-                total = ovenTotal + oddTotal;
-            }
-            if (total % 10 == 0)
-            {
-                return true;
-            }
-            return false;
-        }
-        private int NumberControl(string number)
-        {
-            int numberLenght = number.Length;
-            if (numberLenght == 1)
-            {
-                return Convert.ToInt32(number);
-            }
-            int total = 0;
-            for (int i = 0; i < numberLenght; i++)
-            {
-                total += Convert.ToInt32(number[i].ToString());
-            }
-            return total;
-        }
-        
     }
 }

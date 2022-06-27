@@ -11,8 +11,6 @@ namespace MiniShopApp.Data.Abstract
     {
         Card GetByUserId(string userId);
         void DeleteFromCard(int cardId, int productId);
-        //public override void Update(Card entity);
         void ClearCard(int cardId);
-
     }
 }

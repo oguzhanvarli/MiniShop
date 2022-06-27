@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\oguzh\\Documents\\GitHub\\Web7_Projects\\Week_18\\MiniShopApp\\MiniShopApp.WebUI\\MiniShopApp.WebUI.csproj": {}
+    "D:\\GitRepos\\MiniShop\\MiniShopApp.WebUI\\MiniShopApp.WebUI.csproj": {}
   },
   "projects": {
-    "C:\\Users\\oguzh\\Documents\\GitHub\\Web7_Projects\\Week_18\\MiniShopApp\\MiniShopApp.Business\\MiniShopApp.Business.csproj": {
+    "D:\\GitRepos\\MiniShop\\MiniShopApp.Business\\MiniShopApp.Business.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\oguzh\\Documents\\GitHub\\Web7_Projects\\Week_18\\MiniShopApp\\MiniShopApp.Business\\MiniShopApp.Business.csproj",
+        "projectUniqueName": "D:\\GitRepos\\MiniShop\\MiniShopApp.Business\\MiniShopApp.Business.csproj",
         "projectName": "MiniShopApp.Business",
-        "projectPath": "C:\\Users\\oguzh\\Documents\\GitHub\\Web7_Projects\\Week_18\\MiniShopApp\\MiniShopApp.Business\\MiniShopApp.Business.csproj",
+        "projectPath": "D:\\GitRepos\\MiniShop\\MiniShopApp.Business\\MiniShopApp.Business.csproj",
         "packagesPath": "C:\\Users\\oguzh\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\oguzh\\Documents\\GitHub\\Web7_Projects\\Week_18\\MiniShopApp\\MiniShopApp.Business\\obj\\",
+        "outputPath": "D:\\GitRepos\\MiniShop\\MiniShopApp.Business\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\oguzh\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -28,11 +28,11 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "C:\\Users\\oguzh\\Documents\\GitHub\\Web7_Projects\\Week_18\\MiniShopApp\\MiniShopApp.Data\\MiniShopApp.Data.csproj": {
-                "projectPath": "C:\\Users\\oguzh\\Documents\\GitHub\\Web7_Projects\\Week_18\\MiniShopApp\\MiniShopApp.Data\\MiniShopApp.Data.csproj"
+              "D:\\GitRepos\\MiniShop\\MiniShopApp.Data\\MiniShopApp.Data.csproj": {
+                "projectPath": "D:\\GitRepos\\MiniShop\\MiniShopApp.Data\\MiniShopApp.Data.csproj"
               },
-              "C:\\Users\\oguzh\\Documents\\GitHub\\Web7_Projects\\Week_18\\MiniShopApp\\MiniShopApp.Entity\\MiniShopApp.Entity.csproj": {
-                "projectPath": "C:\\Users\\oguzh\\Documents\\GitHub\\Web7_Projects\\Week_18\\MiniShopApp\\MiniShopApp.Entity\\MiniShopApp.Entity.csproj"
+              "D:\\GitRepos\\MiniShop\\MiniShopApp.Entity\\MiniShopApp.Entity.csproj": {
+                "projectPath": "D:\\GitRepos\\MiniShop\\MiniShopApp.Entity\\MiniShopApp.Entity.csproj"
               }
             }
           }
@@ -67,18 +67,18 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.406\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.301\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\oguzh\\Documents\\GitHub\\Web7_Projects\\Week_18\\MiniShopApp\\MiniShopApp.Core\\MiniShopApp.Core.csproj": {
+    "D:\\GitRepos\\MiniShop\\MiniShopApp.Core\\MiniShopApp.Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\oguzh\\Documents\\GitHub\\Web7_Projects\\Week_18\\MiniShopApp\\MiniShopApp.Core\\MiniShopApp.Core.csproj",
+        "projectUniqueName": "D:\\GitRepos\\MiniShop\\MiniShopApp.Core\\MiniShopApp.Core.csproj",
         "projectName": "MiniShopApp.Core",
-        "projectPath": "C:\\Users\\oguzh\\Documents\\GitHub\\Web7_Projects\\Week_18\\MiniShopApp\\MiniShopApp.Core\\MiniShopApp.Core.csproj",
+        "projectPath": "D:\\GitRepos\\MiniShop\\MiniShopApp.Core\\MiniShopApp.Core.csproj",
         "packagesPath": "C:\\Users\\oguzh\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\oguzh\\Documents\\GitHub\\Web7_Projects\\Week_18\\MiniShopApp\\MiniShopApp.Core\\obj\\",
+        "outputPath": "D:\\GitRepos\\MiniShop\\MiniShopApp.Core\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\oguzh\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -131,18 +131,18 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.406\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.301\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\oguzh\\Documents\\GitHub\\Web7_Projects\\Week_18\\MiniShopApp\\MiniShopApp.Data\\MiniShopApp.Data.csproj": {
+    "D:\\GitRepos\\MiniShop\\MiniShopApp.Data\\MiniShopApp.Data.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\oguzh\\Documents\\GitHub\\Web7_Projects\\Week_18\\MiniShopApp\\MiniShopApp.Data\\MiniShopApp.Data.csproj",
+        "projectUniqueName": "D:\\GitRepos\\MiniShop\\MiniShopApp.Data\\MiniShopApp.Data.csproj",
         "projectName": "MiniShopApp.Data",
-        "projectPath": "C:\\Users\\oguzh\\Documents\\GitHub\\Web7_Projects\\Week_18\\MiniShopApp\\MiniShopApp.Data\\MiniShopApp.Data.csproj",
+        "projectPath": "D:\\GitRepos\\MiniShop\\MiniShopApp.Data\\MiniShopApp.Data.csproj",
         "packagesPath": "C:\\Users\\oguzh\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\oguzh\\Documents\\GitHub\\Web7_Projects\\Week_18\\MiniShopApp\\MiniShopApp.Data\\obj\\",
+        "outputPath": "D:\\GitRepos\\MiniShop\\MiniShopApp.Data\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\oguzh\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -159,8 +159,8 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "C:\\Users\\oguzh\\Documents\\GitHub\\Web7_Projects\\Week_18\\MiniShopApp\\MiniShopApp.Entity\\MiniShopApp.Entity.csproj": {
-                "projectPath": "C:\\Users\\oguzh\\Documents\\GitHub\\Web7_Projects\\Week_18\\MiniShopApp\\MiniShopApp.Entity\\MiniShopApp.Entity.csproj"
+              "D:\\GitRepos\\MiniShop\\MiniShopApp.Entity\\MiniShopApp.Entity.csproj": {
+                "projectPath": "D:\\GitRepos\\MiniShop\\MiniShopApp.Entity\\MiniShopApp.Entity.csproj"
               }
             }
           }
@@ -185,6 +185,10 @@
               "target": "Package",
               "version": "[5.0.16, )"
             },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[5.0.16, )"
+            },
             "Microsoft.EntityFrameworkCore.Sqlite": {
               "target": "Package",
               "version": "[5.0.16, )"
@@ -205,18 +209,18 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.406\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.301\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\oguzh\\Documents\\GitHub\\Web7_Projects\\Week_18\\MiniShopApp\\MiniShopApp.Entity\\MiniShopApp.Entity.csproj": {
+    "D:\\GitRepos\\MiniShop\\MiniShopApp.Entity\\MiniShopApp.Entity.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\oguzh\\Documents\\GitHub\\Web7_Projects\\Week_18\\MiniShopApp\\MiniShopApp.Entity\\MiniShopApp.Entity.csproj",
+        "projectUniqueName": "D:\\GitRepos\\MiniShop\\MiniShopApp.Entity\\MiniShopApp.Entity.csproj",
         "projectName": "MiniShopApp.Entity",
-        "projectPath": "C:\\Users\\oguzh\\Documents\\GitHub\\Web7_Projects\\Week_18\\MiniShopApp\\MiniShopApp.Entity\\MiniShopApp.Entity.csproj",
+        "projectPath": "D:\\GitRepos\\MiniShop\\MiniShopApp.Entity\\MiniShopApp.Entity.csproj",
         "packagesPath": "C:\\Users\\oguzh\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\oguzh\\Documents\\GitHub\\Web7_Projects\\Week_18\\MiniShopApp\\MiniShopApp.Entity\\obj\\",
+        "outputPath": "D:\\GitRepos\\MiniShop\\MiniShopApp.Entity\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\oguzh\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -259,18 +263,18 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.406\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.301\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\oguzh\\Documents\\GitHub\\Web7_Projects\\Week_18\\MiniShopApp\\MiniShopApp.WebUI\\MiniShopApp.WebUI.csproj": {
+    "D:\\GitRepos\\MiniShop\\MiniShopApp.WebUI\\MiniShopApp.WebUI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\oguzh\\Documents\\GitHub\\Web7_Projects\\Week_18\\MiniShopApp\\MiniShopApp.WebUI\\MiniShopApp.WebUI.csproj",
+        "projectUniqueName": "D:\\GitRepos\\MiniShop\\MiniShopApp.WebUI\\MiniShopApp.WebUI.csproj",
         "projectName": "MiniShopApp.WebUI",
-        "projectPath": "C:\\Users\\oguzh\\Documents\\GitHub\\Web7_Projects\\Week_18\\MiniShopApp\\MiniShopApp.WebUI\\MiniShopApp.WebUI.csproj",
+        "projectPath": "D:\\GitRepos\\MiniShop\\MiniShopApp.WebUI\\MiniShopApp.WebUI.csproj",
         "packagesPath": "C:\\Users\\oguzh\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\oguzh\\Documents\\GitHub\\Web7_Projects\\Week_18\\MiniShopApp\\MiniShopApp.WebUI\\obj\\",
+        "outputPath": "D:\\GitRepos\\MiniShop\\MiniShopApp.WebUI\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\oguzh\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -287,14 +291,14 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "C:\\Users\\oguzh\\Documents\\GitHub\\Web7_Projects\\Week_18\\MiniShopApp\\MiniShopApp.Business\\MiniShopApp.Business.csproj": {
-                "projectPath": "C:\\Users\\oguzh\\Documents\\GitHub\\Web7_Projects\\Week_18\\MiniShopApp\\MiniShopApp.Business\\MiniShopApp.Business.csproj"
+              "D:\\GitRepos\\MiniShop\\MiniShopApp.Business\\MiniShopApp.Business.csproj": {
+                "projectPath": "D:\\GitRepos\\MiniShop\\MiniShopApp.Business\\MiniShopApp.Business.csproj"
               },
-              "C:\\Users\\oguzh\\Documents\\GitHub\\Web7_Projects\\Week_18\\MiniShopApp\\MiniShopApp.Core\\MiniShopApp.Core.csproj": {
-                "projectPath": "C:\\Users\\oguzh\\Documents\\GitHub\\Web7_Projects\\Week_18\\MiniShopApp\\MiniShopApp.Core\\MiniShopApp.Core.csproj"
+              "D:\\GitRepos\\MiniShop\\MiniShopApp.Core\\MiniShopApp.Core.csproj": {
+                "projectPath": "D:\\GitRepos\\MiniShop\\MiniShopApp.Core\\MiniShopApp.Core.csproj"
               },
-              "C:\\Users\\oguzh\\Documents\\GitHub\\Web7_Projects\\Week_18\\MiniShopApp\\MiniShopApp.Data\\MiniShopApp.Data.csproj": {
-                "projectPath": "C:\\Users\\oguzh\\Documents\\GitHub\\Web7_Projects\\Week_18\\MiniShopApp\\MiniShopApp.Data\\MiniShopApp.Data.csproj"
+              "D:\\GitRepos\\MiniShop\\MiniShopApp.Data\\MiniShopApp.Data.csproj": {
+                "projectPath": "D:\\GitRepos\\MiniShop\\MiniShopApp.Data\\MiniShopApp.Data.csproj"
               }
             }
           }
@@ -309,10 +313,6 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "dependencies": {
-            "Castle.Core": {
-              "target": "Package",
-              "version": "[5.0.0, )"
-            },
             "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
               "target": "Package",
               "version": "[5.0.16, )"
@@ -320,6 +320,10 @@
             "Microsoft.EntityFrameworkCore.Design": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
+              "target": "Package",
+              "version": "[5.0.16, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
               "version": "[5.0.16, )"
             },
@@ -360,7 +364,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.406\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.301\\RuntimeIdentifierGraph.json"
         }
       }
     }

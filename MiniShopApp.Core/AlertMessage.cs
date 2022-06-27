@@ -7,9 +7,9 @@ namespace MiniShopApp.Core
 {
     public class AlertMessage
     {
-        //Uygulamamızda çeşitli durumlarda ihtiyaç duyduğumuz uyarı mesajları için kullanılacak
-        public string Title { get; set; }//Uyarı tipimiz
-        public string Message { get; set; }//Uyarı mesajımız
-        public string AlertType { get; set; }//Uyarı tipimiz
+        
+        public string Title { get; set; }
+        public string Message { get; set; }//Uyarı mesajı
+        public string AlertType { get; set; }//Uyarı tipi
     }
 }

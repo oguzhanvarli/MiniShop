@@ -1,11 +1,13 @@
-﻿@model OrderModal
+﻿@model OrderModel
 <h6 class="display-4">CheckOut</h6>
-<hr/>
-<form asp-action="CheckOut" asp-controller="Card" method="post">
+<hr />
+<form asp-controller="Card" asp-action="CheckOut" method="post">
+
     <div class="row">
-        
+        <div asp-validation-summary="All"></div>
         <div class="col-md-8">
             <h6>Order Details</h6>
+
             <div class="row mb-3">
                 <div class="col-md-6">
                     <label>First Name:</label>
@@ -36,7 +38,9 @@
                     <input asp-for="@Model.Email" class="form-control" />
                 </div>
             </div>
+            
             <hr />
+            <h6>Card Info</h6>
             <div class="row mb-3">
                 <div class="col-md-6">
                     <label>Card Name:</label>
@@ -63,6 +67,7 @@
             </div>
 
         </div>
+
         <div class="col-md-4">
             <h6>Order Summary</h6>
             <span>Summary Info</span>
@@ -83,7 +88,8 @@
                     <strong>@Model.CardModel.TotalPrice()</strong>
                 </li>
             </ul>
-            <input type="submit" class="btn btn-outline-success" value="Submit"/>
+            <hr />
+            <button type="submit" class="btn btn-success">Submit</button>
         </div>
     </div>
 </form>

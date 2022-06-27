@@ -1,7 +1,6 @@
 ﻿using MiniShopApp.Business.Abstract;
 using MiniShopApp.Data.Abstract;
 using MiniShopApp.Entity;
-
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,20 +11,22 @@ namespace MiniShopApp.Business.Concrete
 {
     public class OrderManager : IOrderService
     {
-        private IOrderRepository _orderRepository;
+        private readonly IUnitOfWork _unitOfWork;
 
-        public OrderManager(IOrderRepository orderRepository)
+        public OrderManager(IUnitOfWork unitOfWork)
         {
-            _orderRepository = orderRepository;
+            _unitOfWork = unitOfWork;
         }
 
         public void Create(Order entity)
         {
-            _orderRepository.Create(entity);
+            _unitOfWork.Orders.Create(entity);
+            _unitOfWork.Save();
         }
-        List<Order> IOrderService.GetOrders(string userId)
+
+        public List<Order> GetOrders(string userId)
         {
-            return _orderRepository.GetOrders(userId);
+            return _unitOfWork.Orders.GetOrders(userId);
         }
     }
 }

@@ -32,6 +32,7 @@ namespace MiniShopApp.Entity
         Unpaid=1,
         Completed=2
     }
+
     public enum EnumPaymentType
     {
         CreditCard=0,

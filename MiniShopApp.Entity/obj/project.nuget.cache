@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "FNTHYwKIaAiwjPlgVfK0dvfeiL7045URGuHC1UXEiFaw14UWp11t+TMNdg5t32Xwb/orEdrbp3HD5wTcjYA9sw==",
+  "dgSpecHash": "IAFKQ3q8H/VWGT80DJaeZ4zgpceyHlR1K08WO6CuHD0MZ/+xCoWvfvO2PZ9nHLLn0tpYaGOkB6UcAlyF63WKKg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\oguzh\\Documents\\GitHub\\Web7_Projects\\Week_18\\MiniShopApp\\MiniShopApp.Entity\\MiniShopApp.Entity.csproj",
+  "projectFilePath": "D:\\GitRepos\\MiniShop\\MiniShopApp.Entity\\MiniShopApp.Entity.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

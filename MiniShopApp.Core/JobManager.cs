@@ -1,7 +1,5 @@
 ﻿using Microsoft.AspNetCore.Http;
-
 using Newtonsoft.Json;
-
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -11,15 +9,10 @@ using System.Threading.Tasks;
 
 namespace MiniShopApp.Core
 {
-    public static class JobManager
+    public static class JobManager 
     {
         public static string MakeUrl(string url)
         {
-            //Kendisine gelen string değerin içindeki;
-            //1) Türkçe karakterlerin yerine latin alfabesindeki karşılıklarını koyacak
-            //2) Boşlukların yerine - işareti koyacak
-            //3) Nokta (.)'ları kaldıracak.
-
             url = url.Replace("I", "i");
             url = url.Replace("İ", "i");
             url = url.Replace("ı", "i");
@@ -52,7 +45,7 @@ namespace MiniShopApp.Core
         {
             var msg = new AlertMessage()
             {
-                Title = title,
+                Title=title,
                 Message = message,
                 AlertType = alertType
             };

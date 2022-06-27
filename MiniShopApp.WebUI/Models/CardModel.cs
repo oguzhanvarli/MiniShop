@@ -11,9 +11,8 @@ namespace MiniShopApp.WebUI.Models
         public List<CardItemModel> CardItems { get; set; }
         public double TotalPrice()
         {
-            return CardItems.Sum(i => i.Price * i.Quantity);     //hercard model içindeki price ile quatitiyi çarpar ve toplar hepsini
+            return CardItems.Sum(i => i.Price * i.Quantity);
         }
-
     }
 
     public class CardItemModel
@@ -24,5 +23,6 @@ namespace MiniShopApp.WebUI.Models
         public double Price { get; set; }
         public string ImageUrl { get; set; }
         public int Quantity { get; set; }
+
     }
 }

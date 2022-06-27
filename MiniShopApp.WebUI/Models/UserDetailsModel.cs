@@ -14,8 +14,6 @@ namespace MiniShopApp.WebUI.Models
         [Required(ErrorMessage = "Last Name zorunludur!")]
         public string LastName { get; set; }
         [Required(ErrorMessage = "User Name zorunludur!")]
-        //Buraya bizim kullanıcı adı koşullarımıza uygun bir validationu yapın
-        //İPUCU--> REGEX
         public string UserName { get; set; }
         [Required(ErrorMessage = "Email zorunludur!")]
         [DataType(DataType.EmailAddress,ErrorMessage ="Lütfen geçerli bir email adresi giriniz!")]

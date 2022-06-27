@@ -1,0 +1,12 @@
+C:\Users\oguzh\Documents\GitHub\Web7_Projects\Week_19\22.06\MiniShopApp\MiniShopApp.Entity\bin\relase\net5.0\MiniShopApp.Entity.deps.json
+C:\Users\oguzh\Documents\GitHub\Web7_Projects\Week_19\22.06\MiniShopApp\MiniShopApp.Entity\bin\relase\net5.0\MiniShopApp.Entity.dll
+C:\Users\oguzh\Documents\GitHub\Web7_Projects\Week_19\22.06\MiniShopApp\MiniShopApp.Entity\bin\relase\net5.0\MiniShopApp.Entity.pdb
+C:\Users\oguzh\Documents\GitHub\Web7_Projects\Week_19\22.06\MiniShopApp\MiniShopApp.Entity\obj\relase\net5.0\MiniShopApp.Entity.csproj.AssemblyReference.cache
+C:\Users\oguzh\Documents\GitHub\Web7_Projects\Week_19\22.06\MiniShopApp\MiniShopApp.Entity\obj\relase\net5.0\MiniShopApp.Entity.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\oguzh\Documents\GitHub\Web7_Projects\Week_19\22.06\MiniShopApp\MiniShopApp.Entity\obj\relase\net5.0\MiniShopApp.Entity.AssemblyInfoInputs.cache
+C:\Users\oguzh\Documents\GitHub\Web7_Projects\Week_19\22.06\MiniShopApp\MiniShopApp.Entity\obj\relase\net5.0\MiniShopApp.Entity.AssemblyInfo.cs
+C:\Users\oguzh\Documents\GitHub\Web7_Projects\Week_19\22.06\MiniShopApp\MiniShopApp.Entity\obj\relase\net5.0\MiniShopApp.Entity.csproj.CoreCompileInputs.cache
+C:\Users\oguzh\Documents\GitHub\Web7_Projects\Week_19\22.06\MiniShopApp\MiniShopApp.Entity\obj\relase\net5.0\MiniShopApp.Entity.dll
+C:\Users\oguzh\Documents\GitHub\Web7_Projects\Week_19\22.06\MiniShopApp\MiniShopApp.Entity\obj\relase\net5.0\refint\MiniShopApp.Entity.dll
+C:\Users\oguzh\Documents\GitHub\Web7_Projects\Week_19\22.06\MiniShopApp\MiniShopApp.Entity\obj\relase\net5.0\MiniShopApp.Entity.pdb
+C:\Users\oguzh\Documents\GitHub\Web7_Projects\Week_19\22.06\MiniShopApp\MiniShopApp.Entity\obj\relase\net5.0\ref\MiniShopApp.Entity.dll

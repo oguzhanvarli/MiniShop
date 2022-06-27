@@ -25,13 +25,7 @@ namespace MiniShopApp.WebUI.Controllers
         {
             ViewBag.Message = "Ürün bulunamadı";
             ViewBag.AlertType = "warning";
-            //ÖDEV:
-            //Bu işi ister model kullanarak şu an olduğu gibi partial yapıyla
-            //İsterseniz ise daha farklı bir yol olarak ViewComponent mantığıyla
-            //Çözün.
-
-            //***********************************
-
+            //Pagination
             const int pageSize = 5;//bu değişken her sayfada kaç item görüneceğini tutacak
             int totalItems = _productService.GetCountByCategory(category);
             var productListViewModel = new ProductListViewModel()
@@ -69,8 +63,7 @@ namespace MiniShopApp.WebUI.Controllers
 
         public IActionResult Search(string q)
         {
-            //Bize arama kriterinin (q) uygun olduğu, eşleştiği TÜM ÜRÜNLERİ
-            //döndürecek bir METOT lazım.
+            //Searching
             return View(_productService.GetSearchResult(q)); 
         }
     }

@@ -71,8 +71,9 @@ namespace MiniShopApp.WebUI.Controllers
                 return Redirect(model.ReturnUrl ?? "~/");
             }
 
-            TempData["Message"]=JobManager.CreateMessage("Dikkat","Şifreniz hatalı!", "danger");
+            TempData["Message"]=JobManager.CreateMessage("DİKKAT","Şifreniz hatalı!", "danger");
             return View(model);
+            
         }
         public IActionResult Register()
         {
@@ -116,7 +117,7 @@ namespace MiniShopApp.WebUI.Controllers
         {
             if (userId == null || token == null)
             {
-                TempData["Message"] = JobManager.CreateMessage("", "Bir sorun oluştur", "warning");
+                TempData["Message"] = JobManager.CreateMessage("","Bir sorun oluştur", "warning");
                 return View();
             }
 
@@ -126,7 +127,7 @@ namespace MiniShopApp.WebUI.Controllers
                 var result = await _userManager.ConfirmEmailAsync(user, token);
                 if (result.Succeeded)
                 {
-                    //Card oluşturulacak
+                    //Card oluşumu
                     _cardService.InitializeCard(userId);
                     TempData["Message"] = JobManager.CreateMessage("","Hesabınız onaylanmıştır!", "success");
                 }
@@ -218,6 +219,5 @@ namespace MiniShopApp.WebUI.Controllers
 
 
         }
-        
-    }
+     }
 }

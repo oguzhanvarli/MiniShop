@@ -1,0 +1,12 @@
+C:\Users\oguzh\Documents\GitHub\Web7_Projects\Week_19\22.06\MiniShopApp\MiniShopApp.Core\bin\relase\net5.0\MiniShopApp.Core.deps.json
+C:\Users\oguzh\Documents\GitHub\Web7_Projects\Week_19\22.06\MiniShopApp\MiniShopApp.Core\bin\relase\net5.0\MiniShopApp.Core.dll
+C:\Users\oguzh\Documents\GitHub\Web7_Projects\Week_19\22.06\MiniShopApp\MiniShopApp.Core\bin\relase\net5.0\MiniShopApp.Core.pdb
+C:\Users\oguzh\Documents\GitHub\Web7_Projects\Week_19\22.06\MiniShopApp\MiniShopApp.Core\obj\relase\net5.0\MiniShopApp.Core.csproj.AssemblyReference.cache
+C:\Users\oguzh\Documents\GitHub\Web7_Projects\Week_19\22.06\MiniShopApp\MiniShopApp.Core\obj\relase\net5.0\MiniShopApp.Core.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\oguzh\Documents\GitHub\Web7_Projects\Week_19\22.06\MiniShopApp\MiniShopApp.Core\obj\relase\net5.0\MiniShopApp.Core.AssemblyInfoInputs.cache
+C:\Users\oguzh\Documents\GitHub\Web7_Projects\Week_19\22.06\MiniShopApp\MiniShopApp.Core\obj\relase\net5.0\MiniShopApp.Core.AssemblyInfo.cs
+C:\Users\oguzh\Documents\GitHub\Web7_Projects\Week_19\22.06\MiniShopApp\MiniShopApp.Core\obj\relase\net5.0\MiniShopApp.Core.csproj.CoreCompileInputs.cache
+C:\Users\oguzh\Documents\GitHub\Web7_Projects\Week_19\22.06\MiniShopApp\MiniShopApp.Core\obj\relase\net5.0\MiniShopApp.Core.dll
+C:\Users\oguzh\Documents\GitHub\Web7_Projects\Week_19\22.06\MiniShopApp\MiniShopApp.Core\obj\relase\net5.0\refint\MiniShopApp.Core.dll
+C:\Users\oguzh\Documents\GitHub\Web7_Projects\Week_19\22.06\MiniShopApp\MiniShopApp.Core\obj\relase\net5.0\MiniShopApp.Core.pdb
+C:\Users\oguzh\Documents\GitHub\Web7_Projects\Week_19\22.06\MiniShopApp\MiniShopApp.Core\obj\relase\net5.0\ref\MiniShopApp.Core.dll
