@@ -1,5 +1,7 @@
 MiniShop E-Ticaret
 
+Kullanılan Teknolojiler: Asp.NetCore 5, Bootstrap
+
 Proje çalışmaları devam etmektedir şuan son halinde değildir. Bu yüzden bazı kısımlarda error alabilirsiniz Girilen Projede MiniShopApp.WebUI dosyası içinde appsetting.json içindeki mailgiriniz ve şifregiriniz kısmına mail ve şifrelerinizi girdiğinizde mail gönderme onaylama işlemleri gerçekleşmektedir.
 
 Projeyi Çalıştırmak için yapılması gerekenler MiniShopApp.WebUI katmanında appsetting.json klasörünün içinde mail adresi ve şifresi giriniz aksi takdirde kayıt olma işlemlerinde mail gönderme işlemi sağlanamayacaktır.
